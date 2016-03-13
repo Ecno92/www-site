@@ -18,6 +18,12 @@ CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
 DELETE_OUTPUT_DIRECTORY = True
 
+# Plugins
+# Unfortunately the yuicompressor module is not included in the plugin
+# root folder. That's why another plugin path is added.
+PLUGIN_PATHS = PLUGIN_PATHS + ['pelican-plugins/pelican-yuicompressor']
+PLUGINS = PLUGINS + ['yuicompressor']
+
 # Following items are often useful when publishing
 
 DISQUS_SITENAME = "therryvanneerven"

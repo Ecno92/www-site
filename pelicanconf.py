@@ -22,15 +22,23 @@ AUTHOR_FEED_RSS = None
 
 DEFAULT_PAGINATION = False
 
-# Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
-STATIC_PATHS = ['images', 'static']
+STATIC_PATHS = ['images', 'static', 'blog']
 EXTRA_PATH_METADATA = {'static/favicon.ico': {'path': 'favicon.ico'}, }
+ARTICLE_PATHS = ['blog']
+ARTICLE_URL = 'blog/{date:%d}-{date:%m}-{date:%Y}/{slug}.html'
+ARTICLE_SAVE_AS = ARTICLE_URL
+
+PLUGIN_PATHS = ['pelican-plugins']
+PLUGINS = ['image_process']
+IMAGE_PROCESS = {
+    'article-image': ["scale_in 720 720 False"],
+    }
+IMAGE_PROCESS_DIR = 'derivative '
 
 THEME = './theme/pelican-hyde/'
 PROFILE_IMAGE = 'avatar.png'
 BIO = ("My name is Therry van Neerven. "
-       "I'm located in the Netherlands and I use this site to share my "
+       "I live in the Netherlands and I use this site to share my "
        "knowledge and experiences. "
        "I have a background in Industrial Design and "
        "I'm currently working as a CTO of a fast growing start-up.")
