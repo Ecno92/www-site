@@ -22,8 +22,10 @@ AUTHOR_FEED_RSS = None
 
 DEFAULT_PAGINATION = False
 
-STATIC_PATHS = ['images', 'static', 'blog']
-EXTRA_PATH_METADATA = {'static/favicon.ico': {'path': 'favicon.ico'}, }
+STATIC_PATHS = ['images', 'static']
+EXTRA_PATH_METADATA = {'static/favicon.ico': {'path': 'favicon.ico'},
+                       # robots.txt blockall until I'm sure everything is OK.
+                       'static/robots.txt': {'path': 'robots.txt'}}
 ARTICLE_PATHS = ['blog']
 ARTICLE_URL = 'blog/{date:%d}-{date:%m}-{date:%Y}/{slug}.html'
 ARTICLE_SAVE_AS = ARTICLE_URL

@@ -1,3 +1,7 @@
+"""
+This file was auto generated!
+TODO: Fix for FTP upload.
+"""
 from fabric.api import *
 import fabric.contrib.project as project
 import os
