@@ -25,15 +25,13 @@ DEFAULT_PAGINATION = False
 STATIC_PATHS = ['images', 'static']
 EXTRA_PATH_METADATA = {'static/favicon.ico': {'path': 'favicon.ico'}}
 ARTICLE_PATHS = ['blog']
-ARTICLE_URL = 'blog/{date:%d}-{date:%m}-{date:%Y}/{slug}.html'
-ARTICLE_SAVE_AS = ARTICLE_URL
 
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['image_process']
 IMAGE_PROCESS = {
     'article-image': ["scale_in 720 720 False"],
     }
-IMAGE_PROCESS_DIR = 'derivative '
+IMAGE_PROCESS_DIR = 'derivative'
 
 THEME = './theme/pelican-hyde/'
 PROFILE_IMAGE = 'avatar.png'

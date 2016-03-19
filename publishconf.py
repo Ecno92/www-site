@@ -11,8 +11,9 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 SITEURL = 'http://www.therryvanneerven.nl'
-RELATIVE_URLS = False
+RELATIVE_URLS = True
 
+FEED_DOMAIN = SITEURL
 FEED_ALL_RSS = 'feeds/all.rss.xml'
 
 DELETE_OUTPUT_DIRECTORY = True
