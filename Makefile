@@ -8,9 +8,9 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-FTP_HOST=ftp.therryvanneerven.nl
-FTP_USER=therry
-FTP_TARGET_DIR=/
+FTP_HOST=therryvanneerven.nl
+FTP_USER=therryvanneerven.nl
+FTP_TARGET_DIR=/www
 
 SSH_HOST=localhost
 SSH_PORT=22
