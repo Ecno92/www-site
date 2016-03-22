@@ -22,7 +22,8 @@ DELETE_OUTPUT_DIRECTORY = True
 # Unfortunately the yuicompressor module is not included in the plugin
 # root folder. That's why another plugin path is added.
 PLUGIN_PATHS = PLUGIN_PATHS + ['pelican-plugins/pelican-yuicompressor']
-PLUGINS = PLUGINS + ['yuicompressor']
+PLUGINS = PLUGINS + ['yuicompressor',
+                     'gzip_cache']
 
 # Following items are often useful when publishing
 

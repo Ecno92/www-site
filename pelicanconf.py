@@ -23,7 +23,8 @@ AUTHOR_FEED_RSS = None
 DEFAULT_PAGINATION = False
 
 STATIC_PATHS = ['images', 'static']
-EXTRA_PATH_METADATA = {'static/favicon.ico': {'path': 'favicon.ico'}}
+EXTRA_PATH_METADATA = {'static/favicon.ico': {'path': 'favicon.ico'},
+                       'static/.htaccess': {'path': '.htaccess'}}
 ARTICLE_PATHS = ['blog']
 
 PLUGIN_PATHS = ['pelican-plugins']
