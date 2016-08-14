@@ -5,5 +5,5 @@ services:
     ports:
      - "8000:8000"
     volumes:
-     - .:/usr/src/app/
+     - .:/usr/src/www-site
     command: sleep infinity
