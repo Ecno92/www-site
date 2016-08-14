@@ -6,7 +6,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip libjpeg8-dev zlib1g-dev default-jre && \
+    apt-get install -y python3 python3-pip libjpeg8-dev zlib1g-dev default-jre lftp && \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /usr/src/app
