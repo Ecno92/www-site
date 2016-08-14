@@ -7,7 +7,7 @@ How to install Raspbian Jessie with a GUI on an old Raspberry Pi.
 :category: tech
 :slug: how-to-install-raspbian-jessie-on-an-old-raspberry-pi
 :authors: Therry van Neerven
-:summary: A tutorial about how to install Raspbian Jessie including a GUI on an old Raspberry Pi (first generation) with only 4GB of storage
+:description: How to install Raspbian Jessie with a GUI on an old and low storage Raspberry Pi.
 
 This weekend I did some experiments with my Raspberry Pi.
 I'm still using the first generation model B which only has 256MB of RAM.

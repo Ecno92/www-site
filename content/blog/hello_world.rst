@@ -7,7 +7,7 @@ Hello World! An introduction to this website.
 :category: misc
 :slug: hello-world-introduction-to-website
 :authors: Therry van Neerven
-:summary: A small introduction about why I made a new website and how I did it.
+:description: A small introduction about why I made a new website and how I did it.
 
 A few years ago I registered this domain because I needed a place to host
 my portfolio site for my university course.
