@@ -110,7 +110,7 @@ Having something running which allows me to put some stories on the internet is 
 If you are also planning to set up a simple website then I can recommend this configuration.
 Even if you are a beginner in web development it should be fairly easy to set up something similar.
 
-If you have any questions or remarks feel free to send leave a comment!
+If you have any questions or remarks feel free to leave a comment!
 
 .. _Blogspot: http://ecno92.blogspot.nl/
 .. _Pelican: http://docs.getpelican.com/
