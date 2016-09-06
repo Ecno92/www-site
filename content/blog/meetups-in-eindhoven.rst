@@ -7,8 +7,7 @@ Meetups in Eindhoven
 :category: tech
 :slug: meetups-in-eindhoven
 :authors: Therry van Neerven
-:description: A short research about whether hosting companies are interested to enable HTTPS by default and if Let's Encrypt is supported on their platforms.
-
+:description: A short summary of meetups in the area of Eindhoven which may be interesting for you.
 
 About two years ago I started a Meetup group for Python Enthousiasts in the area of Eindhoven.
 The first two events were a success. I've met a lot of interesting people and learned from the talks and the discussions which were part of the event.
