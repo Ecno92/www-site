@@ -8,7 +8,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-FTP_HOST=therryvanneerven.nl
+FTP_HOST=therryvanneerven.nl.transurl.nl
 FTP_USER=therryvanneerven.nl
 FTP_TARGET_DIR=/www
 
@@ -109,7 +109,7 @@ dropbox_upload: publish
 	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
 
 ftp_upload: publish
-	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -Re $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
+	lftp sftp://$(FTP_USER)@$(FTP_HOST) -e "set sftp:auto-confirm yes; mirror -Re $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
 
 s3_upload: publish
 	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --guess-mime-type
