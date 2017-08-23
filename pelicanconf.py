@@ -40,7 +40,7 @@ BIO = ("My name is Therry van Neerven. "
        "I live in the Netherlands and I use this site to share my "
        "knowledge and experiences. "
        "I have a background in Industrial Design and "
-       "I'm currently working as a CTO of a fast growing start-up.")
+       "I'm currently working as the Head of Product of a fast growing scale-up.")
 
 SOCIAL = (
     ('envelope', 'mailto:mail@therryvanneerven.nl'),
