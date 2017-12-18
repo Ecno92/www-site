@@ -22,7 +22,7 @@ AUTHOR_FEED_RSS = None
 
 DEFAULT_PAGINATION = False
 
-STATIC_PATHS = ['images', 'static']
+STATIC_PATHS = ['images', 'static', 'files']
 EXTRA_PATH_METADATA = {'static/favicon.ico': {'path': 'favicon.ico'},
                        'static/.htaccess': {'path': '.htaccess'}}
 ARTICLE_PATHS = ['blog']
