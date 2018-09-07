@@ -11,8 +11,8 @@ function check_environment_variables(){
 
 function deploy(){
     check_environment_variables
-    lftp sftp://$(DEPLOY_FTP_USER)@$(DEPLOY_FTP_HOST) \
-         -e "set sftp:auto-confirm yes; mirror -Re $(OUTPUTDIR) $(DEPLOY_FTP_TARGET_DIR) ; quit"
+    lftp -u "$DEPLOY_FTP_USER","$DEPLOY_FTP_PASSWORD" sftp://$DEPLOY_FTP_HOST \
+         -e "set sftp:auto-confirm yes; mirror -Re $OUTPUTDIR $DEPLOY_FTP_TARGET_DIR ; quit"
 }
 
 deploy

@@ -56,7 +56,7 @@ preview: publish
 	cd output && $(PIPENV_RUN) python -m http.server --bind $(LOCALHOST) $(PREVIEWPORT)
 
 deploy: $(OUTPUTDIR)
-	./scripts/deploy_ftp.sh
+	OUTPUTDIR=$(OUTPUTDIR) ./scripts/deploy_ftp.sh
 
 .PHONY:
 	usage						\
