@@ -1,0 +1,22 @@
+sudo: false
+language: python
+python:
+  - "3.6"
+git:
+    submodules: false
+before_install:
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - sudo apt-get install -y lftp openjdk-11-jdk
+addons:
+  apt:
+    update: true
+install:
+  - pip install pipenv --upgrade
+cache: pip
+script:
+  - make publish
+deploy:
+  provider: script
+  script: make deploy
+  on:
+    branch: master
