@@ -30,6 +30,7 @@ usage:
 	@echo 'devserver-start and devserver-stop:  Start and stop the devserver'
 	@echo 'publish and preview: Render the site and preview the site in the webbrowser'
 	@echo 'deploy: Deploy the rendered site using sftp.'
+	@echo "newpost NAME='Name of the post': Write a new blog post"
 
 pelican-plugins/*:
 	test ! -z 'ls pelican-plugins' && \
@@ -62,9 +63,29 @@ preview: publish
 deploy: $(OUTPUTDIR)
 	OUTPUTDIR=$(OUTPUTDIR) ./scripts/deploy_ftp.sh
 
+# https://github.com/getpelican/pelican/wiki/Tips-n-Tricks#make-newpost
+PAGESDIR=$(INPUTDIR)/blog
+DATE := $(shell date +'%Y-%m-%d %H:%M:%S')
+SLUG := $(shell echo '${NAME}' | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z)
+EXT := md
+newpost:
+ifdef NAME
+	echo "Title: $(NAME)"	> $(PAGESDIR)/$(SLUG).$(EXT)
+	echo "Slug: $(SLUG)"	>> $(PAGESDIR)/$(SLUG).$(EXT)
+	echo "Date: $(DATE)"	>> $(PAGESDIR)/$(SLUG).$(EXT)
+	echo "Description:"		>> $(PAGESDIR)/$(SLUG).$(EXT)
+	echo "" 							>> $(PAGESDIR)/$(SLUG).$(EXT)
+	echo "" 							>> $(PAGESDIR)/$(SLUG).$(EXT)
+	${EDITOR} ${PAGESDIR}/${SLUG}.${EXT} &
+else
+	@echo 'Variable NAME is not defined.'
+	@echo 'Do make newpost NAME='"'"'Post Name'"'"
+endif
+
 .PHONY:
 	usage						\
 	devserver-start	\
 	devserver-stop 	\
 	publish					\
-	deploy
+	deploy					\
+	newpost
