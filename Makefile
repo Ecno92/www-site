@@ -63,4 +63,4 @@ deploy: $(OUTPUTDIR)
 	devserver-start	\
 	devserver-stop 	\
 	publish					\
-	deploy					\
+	deploy
