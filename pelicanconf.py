@@ -36,11 +36,7 @@ IMAGE_PROCESS_DIR = 'derivative'
 
 THEME = './theme/pelican-hyde/'
 PROFILE_IMAGE = 'avatar.png'
-BIO = ("My name is Therry van Neerven. "
-       "I live in the Netherlands and I use this site to share my "
-       "knowledge and experiences. "
-       "I have a background in Industrial Design and "
-       "I'm currently working as the Head of Product of a fast growing scale-up.")
+BIO = ("My personal space on the www.")
 
 SOCIAL = (
     ('envelope', 'mailto:mail@therryvanneerven.nl'),
