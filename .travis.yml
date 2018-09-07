@@ -6,15 +6,16 @@ git:
     submodules: false
 before_install:
   - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-  - sudo apt-get install -y lftp openjdk-11-jdk
 addons:
   apt:
     update: true
+  packages:
+    - lftp
 install:
   - pip install pipenv --upgrade
 cache: pip
 script:
-  - make publish
+  - PIPENV_IGNORE_VIRTUALENVS=1 make publish
 deploy:
   provider: script
   script: make deploy
