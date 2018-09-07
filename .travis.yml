@@ -18,6 +18,7 @@ script:
   - PIPENV_IGNORE_VIRTUALENVS=1 make publish
 deploy:
   provider: script
-  script: make deploy
+  skip_cleanup: true
+  script: PIPENV_IGNORE_VIRTUALENVS=1 make deploy
   on:
     branch: master
