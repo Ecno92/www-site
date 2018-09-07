@@ -25,7 +25,11 @@ export PIPENV_VENV_IN_PROJECT := 1
 	touch .venv/x
 
 usage:
-	$(info 'Stopped Pelican and SimpleHTTPServer processes running in background.')
+	@echo 'Use the following make command combinations to interact with the project in a quick way';
+	@echo '---------------------------------------------------------------------------------------';
+	@echo 'devserver-start and devserver-stop:  Start and stop the devserver'
+	@echo 'publish and preview: Render the site and preview the site in the webbrowser'
+	@echo 'deploy: Deploy the rendered site using sftp.'
 
 pelican-plugins/*:
 	test ! -z 'ls pelican-plugins' && \
