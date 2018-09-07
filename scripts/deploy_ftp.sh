@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 function check_environment_variables(){
     for var in DEPLOY_FTP_HOST DEPLOY_FTP_USER DEPLOY_FTP_TARGET_DIR OUTPUTDIR; do
