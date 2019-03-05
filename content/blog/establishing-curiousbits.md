@@ -5,7 +5,7 @@ Description: The launch of my own company: CuriousBits.
 
 It has been only half a year ago that I started at [Jibe Company](http://www.jibecompany.com/){:target="_blank"} to work on their Data Management Platform and the related projects.
 
-In this period I had the oppurtunity to learn more about data management and visualization by working with a nice group of people in Eindhoven and Cluj.
+In this period I learned more about data management and visualization by working with a nice group of people in Eindhoven and Cluj.
 Also I was able to work on several new solutions which are in active use right now.
 So far a very interesting experience and I'm grateful for the opportunity.
 
