@@ -9,7 +9,7 @@ In this period I learned more about data management and visualization by working
 Also I was able to work on several new solutions which are in active use right now.
 So far a very interesting experience and I'm grateful for the opportunity.
 
-While working for Jibe I discovered my intentions to start my own business. This is what I did earlier this year and this resulted in establishing a company called "CuriousBits".
+While working for Jibe I discovered my intentions to start my own business. This is what I did earlier this year and this resulted in establishing a company called ["CuriousBits"](https://www.curiousbits.nl/){:target="_blank"}.
 
 With my own company I want to provide my experience to other companies while also growing into new directions of (full stack) software development.
 
