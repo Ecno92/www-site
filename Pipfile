@@ -9,6 +9,7 @@ pelican = "*"
 yuicompressor = "*"
 pillow = "*"
 beautifulsoup4 = "*"
+pelican-image-process = "*"
 
 [dev-packages]
 

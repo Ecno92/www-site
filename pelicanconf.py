@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+import site
+from distutils.sysconfig import get_python_lib
+
 AUTHOR = 'Therry van Neerven'
 SITENAME = 'Therry'
 SITEURL = ''
@@ -26,9 +29,10 @@ STATIC_PATHS = ['images', 'static', 'files']
 EXTRA_PATH_METADATA = {'static/favicon.ico': {'path': 'favicon.ico'},
                        'static/.htaccess': {'path': '.htaccess'}}
 ARTICLE_PATHS = ['blog']
+PLUGIN_PATHS = [get_python_lib()]
 
-PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['image_process']
+PLUGINS = ['pelican_image_process']
+
 IMAGE_PROCESS = {
     'article-image': ["scale_in 720 720 False"],
     }

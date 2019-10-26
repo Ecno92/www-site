@@ -7,9 +7,7 @@ INPUTDIR := $(BASEDIR)/content
 INPUTOBJECTS := $(shell find $(INPUTDIR) -type d) $(shell find $(INPUTDIR) -type f -name '*')
 THEMEDIR := $(BASEDIR)/theme
 THEMEOBJECTS := $(shell find $(THEMEDIR) -type d) $(shell find $(THEMEDIR) -type f -name '*')
-PLUGINSDIR := $(BASEDIR)/pelican-plugins
-PLUGINSOBJECTS := $(shell find $(PLUGINSDIR) -type d) $(shell find $(PLUGINSDIR) -type f -name '*')
-ASSETS := $(INPUTOBJECTS) $(THEMEOBJECTS) $(PLUGINSOBJECTS) pelicanconf.py publishconf.py
+ASSETS := $(INPUTOBJECTS) $(THEMEOBJECTS) pelicanconf.py publishconf.py
 OUTPUTDIR := $(BASEDIR)/output
 CONFFILE := $(BASEDIR)/pelicanconf.py
 PUBLISHCONF := $(BASEDIR)/publishconf.py
@@ -32,15 +30,11 @@ usage:
 	@echo 'deploy: Deploy the rendered site using sftp.'
 	@echo "newpost NAME='Name of the post': Write a new blog post"
 
-pelican-plugins/*:
-	test ! -z 'ls pelican-plugins' && \
-		git submodule update --init --recursive pelican-plugins
-
 theme/pelican-hyde/*:
 	test ! -z 'ls theme/pelican-hyde' && \
 		git submodule update --init --recursive theme/pelican-hyde
 
-init := .venv/x pelican-plugins/* theme/pelican-hyde/*
+init := .venv/x theme/pelican-hyde/*
 
 devserver-start: $(init)
 	$(PIPENV_RUN) $(SCRIPTSDIR)/develop_server.sh restart $(DEVPORT)

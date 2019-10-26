@@ -18,13 +18,6 @@ FEED_ALL_RSS = 'feeds/all.rss.xml'
 
 DELETE_OUTPUT_DIRECTORY = True
 
-# Plugins
-# Unfortunately the yuicompressor module is not included in the plugin
-# root folder. That's why another plugin path is added.
-PLUGIN_PATHS = PLUGIN_PATHS + ['pelican-plugins/pelican-yuicompressor']
-PLUGINS = PLUGINS + ['yuicompressor',
-                     'gzip_cache']
-
 # Following items are often useful when publishing
 
 DISQUS_SITENAME = "therryvanneerven"
