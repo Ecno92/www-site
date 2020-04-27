@@ -60,7 +60,7 @@ Even under full load the GPU stays at around 50-60 degrees Celsius.
 
 #### Firefox hardware acceleration
 
-I'm a Firefox user, unless I'm frontend applications in React(Native). I noticed after a while that Firefox was not running smoothly.
+I'm a Firefox user, unless I'm developing frontend applications in React(Native). However I noticed after a while that Firefox was not running smoothly.
 I've tried all kinds of options to enable hardware acceleration. Initially with success, but followed by strange transparent Windows and other rendering problems.
 
 I fixed this by enabling WebRenderer. The Arch Linux wiki [has a nice article](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Enable_WebRender) which explains on how you can test this and apply it permanently.
