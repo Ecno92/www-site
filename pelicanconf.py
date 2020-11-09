@@ -31,12 +31,7 @@ EXTRA_PATH_METADATA = {'static/favicon.ico': {'path': 'favicon.ico'},
 ARTICLE_PATHS = ['blog']
 PLUGIN_PATHS = [get_python_lib()]
 
-PLUGINS = ['pelican_image_process']
-
-IMAGE_PROCESS = {
-    'article-image': ["scale_in 720 720 False"],
-    }
-IMAGE_PROCESS_DIR = 'derivative'
+PLUGINS = []
 
 THEME = './theme/pelican-hyde/'
 PROFILE_IMAGE = 'avatar.png'
