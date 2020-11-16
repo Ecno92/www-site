@@ -33,7 +33,7 @@ PLUGIN_PATHS = [get_python_lib()]
 
 PLUGINS = []
 
-THEME = './theme/pelican-hyde/'
+THEME = './theme/'
 PROFILE_IMAGE = 'avatar.png'
 BIO = ("My personal space on the www.")
 

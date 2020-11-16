@@ -14,27 +14,20 @@ PUBLISHCONF := $(BASEDIR)/publishconf.py
 LOCALHOST := 127.0.0.1
 DEVPORT := 8000
 PREVIEWPORT := 8001
-.DEFAULT_GOAL := usage
+.DEFAULT_GOAL := preview
 
 
 export PIPENV_VENV_IN_PROJECT := 1
-.venv/x: Pipfile
-	pipenv install --dev
-	touch .venv/x
+VENV := .venv
+$(VENV): Pipfile
+	pipenv run python -m pip install 'setuptools==50.3.2'
+	pipenv install
+	touch $(VENV)
 
-usage:
-	@echo 'Use the following make command combinations to interact with the project in a quick way';
-	@echo '---------------------------------------------------------------------------------------';
-	@echo 'devserver-start and devserver-stop:  Start and stop the devserver'
-	@echo 'publish and preview: Render the site and preview the site in the webbrowser'
-	@echo 'deploy: Deploy the rendered site using sftp.'
-	@echo "newpost NAME='Name of the post': Write a new blog post"
+venv: $(VENV)
 
-theme/pelican-hyde/*:
-	test ! -z 'ls theme/pelican-hyde' && \
-		git submodule update --init --recursive theme/pelican-hyde
-
-init := .venv/x theme/pelican-hyde/*
+init: $(VENV)
+	(ls theme/ > /dev/null && cd theme/ && git pull) || git clone https://github.com/Ecno92/pelican-hyde.git theme/
 
 devserver-start: $(init)
 	$(PIPENV_RUN) $(SCRIPTSDIR)/develop_server.sh restart $(DEVPORT)
@@ -42,13 +35,11 @@ devserver-start: $(init)
 devserver-stop: $(init)
 	$(PIPENV_RUN) $(SCRIPTSDIR)/develop_server.sh stop
 
-$(OUTPUTDIR): $(init) $(ASSETS)
+publish: $(init) $(ASSETS)
 	$(info 'Cleaning output dir...')
 	@[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
 	$(info 'Publishing content with Pelican...')
 	@$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
-
-publish: $(OUTPUTDIR)
 
 preview: publish
 	(sleep 2 && firefox --new-tab http://$(LOCALHOST):$(PREVIEWPORT)) & \
@@ -76,10 +67,9 @@ else
 	@echo 'Do make newpost NAME='"'"'Post Name'"'"
 endif
 
-.PHONY:
-	usage						\
+.PHONY: venv \
 	devserver-start	\
-	devserver-stop 	\
-	publish					\
-	deploy					\
+	devserver-stop \
+	publish	\
+	preview \
 	newpost
