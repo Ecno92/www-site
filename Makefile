@@ -1,5 +1,4 @@
 PIPENV_RUN := pipenv run
-PELICAN := $(PIPENV_RUN) pelican
 PELICANOPTS :=
 BASEDIR := $(CURDIR)
 SCRIPTSDIR := $(BASEDIR)/scripts
@@ -11,39 +10,32 @@ ASSETS := $(INPUTOBJECTS) $(THEMEOBJECTS) pelicanconf.py publishconf.py
 OUTPUTDIR := $(BASEDIR)/output
 CONFFILE := $(BASEDIR)/pelicanconf.py
 PUBLISHCONF := $(BASEDIR)/publishconf.py
-LOCALHOST := 127.0.0.1
 DEVPORT := 8000
-PREVIEWPORT := 8001
-.DEFAULT_GOAL := preview
-
 
 export PIPENV_VENV_IN_PROJECT := 1
-VENV := .venv
-$(VENV): Pipfile
+venv:
 	pipenv run python -m pip install 'setuptools==50.3.2'
 	pipenv install
-	touch $(VENV)
 
-venv: $(VENV)
-
-init: $(VENV)
+theme:
 	(ls theme/ > /dev/null && cd theme/ && git pull) || git clone https://github.com/Ecno92/pelican-hyde.git theme/
 
-devserver-start: $(init)
+devserver-start:
 	$(PIPENV_RUN) $(SCRIPTSDIR)/develop_server.sh restart $(DEVPORT)
 
-devserver-stop: $(init)
+devserver-stop:
 	$(PIPENV_RUN) $(SCRIPTSDIR)/develop_server.sh stop
 
-publish: $(init) $(ASSETS)
+preview:
+	firefox --new-tab file://$(OUTPUTDIR)/index.html
+
+publish:
 	$(info 'Cleaning output dir...')
 	@[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
 	$(info 'Publishing content with Pelican...')
-	@$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	@pelican $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
-preview: publish
-	(sleep 2 && firefox --new-tab http://$(LOCALHOST):$(PREVIEWPORT)) & \
-	cd output && $(PIPENV_RUN) python -m http.server --bind $(LOCALHOST) $(PREVIEWPORT)
+deploy: theme publish
 
 # https://github.com/getpelican/pelican/wiki/Tips-n-Tricks#make-newpost
 PAGESDIR=$(INPUTDIR)/blog
@@ -65,8 +57,10 @@ else
 endif
 
 .PHONY: venv \
+	theme \
 	devserver-start	\
 	devserver-stop \
-	publish	\
 	preview \
+	publish	\
+	deploy \
 	newpost
