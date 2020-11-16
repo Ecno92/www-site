@@ -28,7 +28,7 @@ DEFAULT_PAGINATION = False
 STATIC_PATHS = ['images', 'static', 'files']
 EXTRA_PATH_METADATA = {'static/favicon.ico': {'path': 'favicon.ico'},
                        'static/.htaccess': {'path': '.htaccess'}}
-ARTICLE_PATHS = ['blog']
+ARTICLE_PATHS = ['articles']
 PLUGIN_PATHS = [get_python_lib()]
 
 PLUGINS = []
