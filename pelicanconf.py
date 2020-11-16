@@ -26,8 +26,7 @@ AUTHOR_FEED_RSS = None
 DEFAULT_PAGINATION = False
 
 STATIC_PATHS = ['images', 'static', 'files']
-EXTRA_PATH_METADATA = {'static/favicon.ico': {'path': 'favicon.ico'},
-                       'static/.htaccess': {'path': '.htaccess'}}
+EXTRA_PATH_METADATA = {'static/favicon.ico': {'path': 'favicon.ico'},}
 ARTICLE_PATHS = ['articles']
 PLUGIN_PATHS = [get_python_lib()]
 
