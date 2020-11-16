@@ -45,9 +45,6 @@ preview: publish
 	(sleep 2 && firefox --new-tab http://$(LOCALHOST):$(PREVIEWPORT)) & \
 	cd output && $(PIPENV_RUN) python -m http.server --bind $(LOCALHOST) $(PREVIEWPORT)
 
-deploy: $(OUTPUTDIR)
-	OUTPUTDIR=$(OUTPUTDIR) ./scripts/deploy_ftp.sh
-
 # https://github.com/getpelican/pelican/wiki/Tips-n-Tricks#make-newpost
 PAGESDIR=$(INPUTDIR)/blog
 DATE := $(shell date +'%Y-%m-%d %H:%M:%S')
