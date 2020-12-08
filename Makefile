@@ -38,7 +38,7 @@ publish:
 deploy: theme publish
 
 # https://github.com/getpelican/pelican/wiki/Tips-n-Tricks#make-newpost
-PAGESDIR=$(INPUTDIR)/blog
+PAGESDIR=$(INPUTDIR)/articles
 DATE := $(shell date +'%Y-%m-%d %H:%M:%S')
 SLUG := $(shell echo '${NAME}' | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z)
 EXT := md
