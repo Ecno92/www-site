@@ -1,0 +1,2 @@
+# Those requirements are only for installing poetry in netlify
+poetry==1.2.2
