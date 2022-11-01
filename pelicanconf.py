@@ -35,10 +35,8 @@ PLUGINS = []
 THEME = './theme/'
 PROFILE_IMAGE = 'avatar.png'
 BIO = ("My personal space on the www.")
-TWITTER_USERNAME = 'ecno92'
 
 SOCIAL = (
     ('envelope', 'mailto:therry.van.neerven@curiousbits.nl'),
     ('linkedin', 'https://nl.linkedin.com/in/therry-van-neerven-4130a267'),
-    ('twitter', 'https://twitter.com/ecno92'),
     ('github', 'http://github.com/Ecno92'))
