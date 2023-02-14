@@ -3,6 +3,8 @@ Slug: different-git-configuration-per-directory
 Date: 2022-10-31 19:25:38
 Description: "Use a different Git configuration per directory"
 
+*Article is updated at 2023-02-14*
+
 I have multiple accounts for GitLab and Github.
 The reason for this is that I work for multiple companies and they
 require me to use a unique email address and account for those services.
@@ -45,14 +47,21 @@ user@computer:~$ cat ~/Projects/company/.gitconfig
 [user]
 	email = user@company.com
 	name = Therry van Neerven
+
+[core]
+    sshCommand=ssh -i ~/.ssh/id_ed25519.company -F /dev/null
 ```
 
 The user key overrides the previous user key
 and now my commits are using the company email.
+Also the `sshCommand` is overriden, it now uses the specific key that is registered in the GitLab account.
 
-In this way I always commit with the correct email address.
+In this way I always commit with the correct email address, and push my changes with the correct ssh key.
 
-## SSH config
+## SSH config (Old approach)
+
+The approach below is an older alternative to defining the `sshCommand` in the `.gitconfig` file.
+You can use it as a replacement of the `sshCommand`, in case you are running a git version older than 2.10.0.
 
 When pulling and pushing code I also need to make sure that I use the right SSH keys.
 This is done using a SSH config like this:
