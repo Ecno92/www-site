@@ -1,16 +1,19 @@
-POETRY_RUN := poetry run
+# Workaround for issues in Netlify which started to occur
+# recently
+POETRY := poetry --no-plugins
 
 theme:
 	(ls theme/ > /dev/null && cd theme/ && git pull) || git clone https://github.com/Ecno92/pelican-hyde.git theme/
 
 dev:
-	$(POETRY_RUN) pelican --listen --autoreload
+	$(POETRY) run pelican --listen --autoreload
 
 publish:
-	$(POETRY_RUN) pelican
+	$(POETRY) run pelican
 
 venv:
-	poetry install
+	$(POETRY) env use $(shell which python3)
+	$(POETRY) install
 
 deploy: venv theme publish
 
