@@ -10,6 +10,7 @@ publish:
 	$(POETRY_RUN) pelican
 
 venv:
+	poetry env use $(shell which python3)
 	poetry install
 
 deploy: venv theme publish
