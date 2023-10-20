@@ -39,7 +39,6 @@ endif
 
 .PHONY: theme \
 	dev \
-	preview \
 	publish	\
 	deploy \
 	newpost
