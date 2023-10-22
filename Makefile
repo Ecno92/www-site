@@ -1,9 +1,10 @@
 # Workaround for issues in Netlify which started to occur
 # recently
 POETRY := poetry --no-plugins
+THEME_REPO := https://github.com/jvanz/pelican-hyde.git
 
 theme:
-	(ls theme/ > /dev/null && cd theme/ && git pull) || git clone https://github.com/Ecno92/pelican-hyde.git theme/
+	(ls theme/ > /dev/null && cd theme/ && git pull) || git clone $(THEME_REPO) theme/
 
 dev:
 	$(POETRY) run pelican --listen --autoreload
