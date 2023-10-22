@@ -40,3 +40,5 @@ SOCIAL = (
     ('envelope', 'mailto:therry.van.neerven@curiousbits.nl'),
     ('linkedin', 'https://nl.linkedin.com/in/therry-van-neerven-4130a267'),
     ('github', 'http://github.com/Ecno92'))
+
+DISPLAY_PAGES_ON_MENU = True
