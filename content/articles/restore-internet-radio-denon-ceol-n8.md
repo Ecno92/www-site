@@ -2,6 +2,8 @@ Title: Restore internet radio Denon CEOL N8
 Slug: restore-internet-radio-denon-ceol-n8
 Date: 2023-12-03 12:00:00
 
+**WARNING:** At 10/04/2024 the trick mentioned in this article stopped working. I have undone the trick, and now internet radio seems to work with the original settings.
+
 10 year ago Denon released the Denon (CEOL) RCD-N8.
 A small network audio system which uses [vTuner](https://www.vtuner.com/) services for providing internet radio.
 I bought this device second hand.
