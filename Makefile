@@ -1,20 +1,20 @@
 # Workaround for issues in Netlify which started to occur
 # recently
-POETRY := poetry --no-plugins
 THEME_REPO := https://github.com/jvanz/pelican-hyde.git
+VENV_BIN := ./.venv/bin
+
 
 theme:
 	(ls theme/ > /dev/null && cd theme/ && git pull) || git clone $(THEME_REPO) theme/
 
 dev:
-	$(POETRY) run pelican --listen --autoreload
+	$(VENV_BIN)/pelican --listen --autoreload
 
 publish:
-	$(POETRY) run pelican
+	$(VENV_BIN)/pelican
 
 venv:
-	$(POETRY) env use $(shell which python3)
-	$(POETRY) install
+	uv sync
 
 deploy: venv theme publish
 
@@ -38,8 +38,12 @@ else
 	@echo 'Do make newpost NAME='"'"'Post Name'"'"
 endif
 
+dependencies:
+	uv pip freeze > requirements.txt
+
 .PHONY: theme \
 	dev \
 	publish	\
 	deploy \
-	newpost
+	newpost \
+	dependencies

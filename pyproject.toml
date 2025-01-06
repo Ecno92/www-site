@@ -1,17 +1,10 @@
-[tool.poetry]
+[project]
 name = "www-site"
 version = "0.1.0"
-description = ""
-authors = ["Therry van Neerven <therry.van.neerven@curiousbits.nl>"]
+description = "Add your description here"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-Markdown = "*"
-pelican = "*"
-markdown = "*"
-
-
-[tool.poetry.group.dev.dependencies]
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.8.1"
+dependencies = [
+    "pelican[markdown]>=4.10.2",
+    "setuptools>=75.3.0",
+]
