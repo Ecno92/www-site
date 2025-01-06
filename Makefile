@@ -14,7 +14,8 @@ publish:
 	$(VENV_BIN)/pelican
 
 venv:
-	uv sync
+	python3 -m venv .venv/
+	.venv/bin/pip install -r requirements.txt
 
 deploy: venv theme publish
 
