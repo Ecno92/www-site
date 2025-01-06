@@ -38,7 +38,14 @@ BIO = ("My personal space on the www.")
 
 SOCIAL = (
     ('envelope', 'mailto:therry.van.neerven@curiousbits.nl'),
-    ('linkedin', 'https://nl.linkedin.com/in/therry-van-neerven-4130a267'),
-    ('github', 'http://github.com/Ecno92'))
+    ('linkedin', 'https://www.linkedin.com/in/therryvanneerven/'),
+    ('github', 'http://github.com/Ecno92'),
+    ('mastodon', 'https://mastodon.social/@Therry92')
+)
+
+MENUITEMS = (
+    ("Therry's Documentation", "https://docs.therryvanneerven.nl/"),
+)
+
 
 DISPLAY_PAGES_ON_MENU = True
