@@ -3,4 +3,3 @@ pelican.pid
 __pycache__/
 output/
 .venv/
-theme/

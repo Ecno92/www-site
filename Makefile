@@ -1,23 +1,18 @@
 # Workaround for issues in Netlify which started to occur
 # recently
-THEME_REPO := https://github.com/jvanz/pelican-hyde.git
 VENV_BIN := ./.venv/bin
-
-
-theme:
-	(ls theme/ > /dev/null && cd theme/ && git pull) || git clone $(THEME_REPO) theme/
 
 dev:
 	$(VENV_BIN)/pelican --listen --autoreload
 
 publish:
-	$(VENV_BIN)/pelican
+	$(VENV_BIN)/pelican -s publishconf.py
 
 venv:
 	python3 -m venv .venv/
 	.venv/bin/pip install -r requirements.txt
 
-deploy: venv theme publish
+deploy: venv publish
 
 # https://github.com/getpelican/pelican/wiki/Tips-n-Tricks#make-newpost
 PAGESDIR=content/articles
@@ -42,8 +37,7 @@ endif
 dependencies:
 	uv pip freeze > requirements.txt
 
-.PHONY: theme \
-	dev \
+.PHONY: dev \
 	publish	\
 	deploy \
 	newpost \

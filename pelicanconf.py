@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
@@ -49,3 +50,5 @@ MENUITEMS = (
 
 
 DISPLAY_PAGES_ON_MENU = True
+
+INCLUDE_GOATCOUNTER = False
