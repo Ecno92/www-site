@@ -1,0 +1,46 @@
+[build]
+  publish = "public"
+
+# Migrated blog articles -> new location on curiousbits.nl
+[[redirects]]
+  from = "/different-git-configuration-per-directory.html"
+  to = "https://curiousbits.nl/blog/different-git-configuration-per-directory/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/easy-firefox-profile-switching-on-ubuntu.html"
+  to = "https://curiousbits.nl/blog/easy-firefox-profile-switching-on-ubuntu/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/establishing-curiousbits.html"
+  to = "https://curiousbits.nl/blog/establishing-curiousbits/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-documentation-website.html"
+  to = "https://curiousbits.nl/blog/personal-documentation-website/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restore-internet-radio-denon-ceol-n8.html"
+  to = "https://curiousbits.nl/blog/restore-internet-radio-denon-ceol-n8/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sff-workstation-build-notes.html"
+  to = "https://curiousbits.nl/blog/sff-workstation-build-notes/"
+  status = 301
+  force = true
+
+# Everything else -> curiousbits.nl
+[[redirects]]
+  from = "/*"
+  to = "https://curiousbits.nl/:splat"
+  status = 301
+  force = true
